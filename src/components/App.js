@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Header from "./components/Header";
 import ShoppingList from "./ShoppingList";
 import itemData from "../data/items";
 
@@ -9,16 +10,13 @@ function App() {
     setIsDarkMode((isDarkMode) => !isDarkMode);
   }
 
+
   return (
     <div className={"App " + (isDarkMode ? "dark" : "light")}>
-      <header>
-        <h2>Shopster</h2>
-        <button onClick={onDarkModeClick}>
-          {isDarkMode ? "Dark" : "Light"} Mode
-        </button>
-      </header>
+      <Header onDarkModeClick={onDarkModeClick} />
       <ShoppingList items={itemData} />
-    </div>
+      </div>
+      
   );
 }
 
